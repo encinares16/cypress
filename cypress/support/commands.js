@@ -23,3 +23,31 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+import { credential } from "../fixtures/credential";
+
+Cypress.Commands.add('auth', () => {
+  cy.visit('login/auth')
+  cy.get('input[name="j_username"]')
+    .type(credential.username)
+    .should('exist')
+    .should('be.visible')
+    .should('have.value', 'qatest')
+    .wait(500);
+  
+    cy.get('input[name="j_password"]')
+      .type(credential.password)
+      .should('exist')
+      .should('be.visible')
+      .should('have.value', 'ap0ll0')
+      .wait(500);
+
+  cy.get('input[value="LOGIN >"]').should('exist').click()
+  cy.url().should('include', '/')
+})
+
+Cypress.Commands.add('logout', () => {
+  cy.get('[href="/logout/index"]').should('exist').click()
+})
+  
+  

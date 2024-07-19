@@ -2,8 +2,14 @@ const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
   e2e: {
+    chromeWebSecurity: false, 
+    baseUrl: 'https://vm2-testpay.apollo.com.ph/',
     setupNodeEvents(on, config) {
-      // implement node event listeners here
+      return {
+        browsers: config.browsers.filter(
+          (b) => b.family === 'chromium' && b.name !== 'electron'
+        ), 
+      }
     },
   },
 });
