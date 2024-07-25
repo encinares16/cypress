@@ -49,5 +49,17 @@ Cypress.Commands.add('auth', () => {
 Cypress.Commands.add('logout', () => {
   cy.get('[href="/logout/index"]').should('exist').click()
 })
-  
+
+Cypress.Commands.add('merchant', () => {
+  cy.visit('merchant/search').wait(1000)
+  cy.get(':nth-child(2) > .accessible').each(($el, index) => {
+    cy.wrap($el)
+      .should('exist')
+      .should('be.visible').click(); 
+      cy.wrap($el).invoke('text').wait(1000).then((text) => {
+      cy.log(`Module ${index + 1}: ${text}`)
+    });
+  });
+})
+
   
