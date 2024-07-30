@@ -62,4 +62,6 @@ Cypress.Commands.add('merchant', () => {
   });
 })
 
-  
+// cy.intercept('POST', '**/login').as('login');
+// cy.visit("/")
+// cy.wait('@login')
