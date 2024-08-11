@@ -1,0 +1,24 @@
+{
+  "input": {
+    "reseller": "ecpay",
+    "merchantName": "Test Merchant",
+    "merchantId": "7-Eleven",
+    "mux": "sevenElevenMux",
+    "expiresAfter": "2,880",
+    "isEnabled": "Enabled",
+    "validate": "False",
+    "feature": "False",
+    "stip": "True"
+  },
+  "newMerchant": {
+    "reseller": "ecpay",
+    "merchantName": "Test Merchant Apollo",
+    "merchantId": "test_merchant_apollo",
+    "mux": "apolloMux",
+    "expiresAfter": "2,880",
+    "isEnabled": "Enabled",
+    "validate": "False",
+    "feature": "False",
+    "stip": "True"
+  }
+}
