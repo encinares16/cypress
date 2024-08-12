@@ -15,7 +15,7 @@
     "merchantName": "Test Merchant Apollo",
     "merchantId": "test_merchant_apollo",
     "mux": "apolloMux",
-    "expiresAfter": "2,880",
+    "expiresAfter": 2880,
     "isEnabled": "Enabled",
     "validate": "False",
     "feature": "False",
